@@ -75,7 +75,62 @@ class _TreewikiState extends State<Treewiki> {
         ],
         backgroundColor: Color.fromRGBO(0, 0, 0, 0.8),
       ),
-      body: Container(),
+      body: ListView(
+        padding: EdgeInsets.all(16),
+        children: [
+          // 첫 번째 리스트
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Text(
+                  '이나무는?',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              TextButton(
+                onPressed: () {
+                  // 더보기 버튼 클릭 시 실행할 동작
+                },
+                child: Text(
+                  '더보기',
+                  style: TextStyle(
+                    color: Colors.blue,
+                  ),
+                ),
+              ),
+            ],
+          ),
+
+          // 두 번째부터 이미지 스와이프 가능한 부분
+          Container(
+            height: 108, // 이미지 높이 조정
+            child: PageView.builder(
+              itemCount: 10, // 전체 이미지 개수
+              itemBuilder: (context, index) {
+                return Container(
+                  margin: EdgeInsets.symmetric(horizontal: 8),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(3),
+                    image: DecorationImage(
+                      image: AssetImage('assets/img/tree1.jpg'),
+                      fit: BoxFit.cover, // 이미지 크기를 부모 컨테이너에 맞게 조정
+                    ),
+                  ),
+                  width: 108, // 이미지 가로 크기를 108로 지정
+                  height: 108, // 이미지 세로 크기를 108로 지정
+                );
+              },
+              pageSnapping: true,
+              scrollDirection: Axis.horizontal,
+              controller: PageController(viewportFraction: 0.3),
+            ),
+          ),
+        ],
+      ),
       bottomNavigationBar: BottomAppBar(
         elevation: 30, // 그림자 높이 조정
         child: SizedBox(

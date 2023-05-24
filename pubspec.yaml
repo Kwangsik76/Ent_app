@@ -62,6 +62,9 @@ flutter:
     - assets/home_on.png
     - assets/camera.png
     - assets/myquestion.png
+    - assets/img/tree1.jpg
+    - assets/img/tree2.jpg
+    - assets/img/tree3.jpg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
