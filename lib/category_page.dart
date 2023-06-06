@@ -4,14 +4,14 @@ import 'app_bar.dart';
 import 'bottom_nav_bar.dart';
 import 'sub_list.dart';
 
-class MyQuestion extends StatefulWidget {
-  const MyQuestion({Key? key}) : super(key: key);
+class CategoryPage extends StatefulWidget {
+  const CategoryPage({Key? key}) : super(key: key);
 
   @override
-  State<MyQuestion> createState() => _MyQuestionState();
+  State<CategoryPage> createState() => _CategoryPageState();
 }
 
-class _MyQuestionState extends State<MyQuestion> {
+class _CategoryPageState extends State<CategoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

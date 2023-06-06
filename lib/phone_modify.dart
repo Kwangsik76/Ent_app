@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'app_bar.dart';
 
 class PhoneNumber extends StatelessWidget {
-  const PhoneNumber({super.key});
+  const PhoneNumber({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class PhoneNumber extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(18.0),
           child: ListView(
-            children: [
+            children: <Widget>[
               SizedBox(height: 16.0),
               Align(
                 alignment: Alignment.bottomLeft,
@@ -32,27 +32,99 @@ class PhoneNumber extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 16.0),
-              TextField(
-                style: TextStyle(color: Colors.white),
-                decoration: InputDecoration(
-                  labelText: '010-3855-7332',
-                  hintStyle: TextStyle(
-                    fontSize: 16,
-                    color: Colors.grey,
+              Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      style: TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                        labelText: '010',
+                        hintStyle: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey,
+                        ),
+                        labelStyle: TextStyle(color: Colors.white),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          borderSide: BorderSide(width: 1, color: Colors.white),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          borderSide: BorderSide(width: 1, color: Colors.white),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        ),
+                      ),
+                    ),
                   ),
-                  labelStyle: TextStyle(color: Colors.white),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    borderSide: BorderSide(width: 1, color: Colors.white),
+                  SizedBox(width: 8.0),
+                  Text(
+                    '-',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
                   ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    borderSide: BorderSide(width: 1, color: Colors.white),
+                  SizedBox(width: 8.0),
+                  Expanded(
+                    child: TextField(
+                      style: TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                        labelText: '3855',
+                        hintStyle: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey,
+                        ),
+                        labelStyle: TextStyle(color: Colors.white),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          borderSide: BorderSide(width: 1, color: Colors.white),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          borderSide: BorderSide(width: 1, color: Colors.white),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        ),
+                      ),
+                    ),
                   ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  SizedBox(width: 8.0),
+                  Text(
+                    '-',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
                   ),
-                ),
+                  SizedBox(width: 8.0),
+                  Expanded(
+                    child: TextField(
+                      style: TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                        labelText: '7332',
+                        hintStyle: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey,
+                        ),
+                        labelStyle: TextStyle(color: Colors.white),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          borderSide: BorderSide(width: 1, color: Colors.white),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          borderSide: BorderSide(width: 1, color: Colors.white),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
               SizedBox(height: 16.0),
               Text(

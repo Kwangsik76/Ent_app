@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'app_bar.dart';
 
 class LicenseNumber extends StatelessWidget {
-  const LicenseNumber({super.key});
+  const LicenseNumber({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,27 +32,132 @@ class LicenseNumber extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 16.0),
-              TextField(
-                style: TextStyle(color: Colors.white),
-                decoration: InputDecoration(
-                  labelText: '20-1-02-0227',
-                  hintStyle: TextStyle(
-                    fontSize: 16,
-                    color: Colors.grey,
+              Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      style: TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                        labelText: '20',
+                        hintStyle: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey,
+                        ),
+                        labelStyle: TextStyle(color: Colors.white),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          borderSide: BorderSide(width: 1, color: Colors.white),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          borderSide: BorderSide(width: 1, color: Colors.white),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        ),
+                      ),
+                    ),
                   ),
-                  labelStyle: TextStyle(color: Colors.white),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    borderSide: BorderSide(width: 1, color: Colors.white),
+                  SizedBox(width: 8.0),
+                  Text(
+                    '-',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
                   ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    borderSide: BorderSide(width: 1, color: Colors.white),
+                  SizedBox(width: 8.0),
+                  Expanded(
+                    child: TextField(
+                      style: TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                        labelText: '1',
+                        hintStyle: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey,
+                        ),
+                        labelStyle: TextStyle(color: Colors.white),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          borderSide: BorderSide(width: 1, color: Colors.white),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          borderSide: BorderSide(width: 1, color: Colors.white),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        ),
+                      ),
+                    ),
                   ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  SizedBox(width: 8.0),
+                  Text(
+                    '-',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
                   ),
-                ),
+                  SizedBox(width: 8.0),
+                  Expanded(
+                    child: TextField(
+                      style: TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                        labelText: '02',
+                        hintStyle: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey,
+                        ),
+                        labelStyle: TextStyle(color: Colors.white),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          borderSide: BorderSide(width: 1, color: Colors.white),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          borderSide: BorderSide(width: 1, color: Colors.white),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 8.0),
+                  Text(
+                    '-',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
+                  ),
+                  SizedBox(width: 8.0),
+                  Expanded(
+                    child: TextField(
+                      style: TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                        labelText: '0227',
+                        hintStyle: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey,
+                        ),
+                        labelStyle: TextStyle(color: Colors.white),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          borderSide: BorderSide(width: 1, color: Colors.white),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          borderSide: BorderSide(width: 1, color: Colors.white),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
               SizedBox(height: 16.0),
               Text(
@@ -75,12 +180,12 @@ class LicenseNumber extends StatelessWidget {
                           // 첫 번째 TextButton의 동작
                         },
                         child: Text('취소'),
-                        style: TextButton.styleFrom(
+                        style: ElevatedButton.styleFrom(
                           textStyle: TextStyle(
                             fontSize: 16,
                             color: Colors.black,
                           ),
-                          backgroundColor: Colors.grey[700],
+                          primary: Colors.grey[700],
                           padding: EdgeInsets.all(12),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
@@ -96,12 +201,12 @@ class LicenseNumber extends StatelessWidget {
                           // 두 번째 TextButton의 동작
                         },
                         child: Text('변경'),
-                        style: TextButton.styleFrom(
+                        style: ElevatedButton.styleFrom(
                           textStyle: TextStyle(
                             fontSize: 16,
                             color: Colors.black,
                           ),
-                          backgroundColor: Colors.lightGreen,
+                          primary: Colors.lightGreen,
                           padding: EdgeInsets.all(12),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),

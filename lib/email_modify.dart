@@ -1,8 +1,23 @@
 import 'package:flutter/material.dart';
 import 'app_bar.dart';
 
-class EmailAdress extends StatelessWidget {
-  const EmailAdress({super.key});
+class EmailAddress extends StatefulWidget {
+  const EmailAddress({Key? key}) : super(key: key);
+
+  @override
+  _EmailAddressState createState() => _EmailAddressState();
+}
+
+class _EmailAddressState extends State<EmailAddress> {
+  final TextEditingController _emailPrefixController = TextEditingController();
+  final TextEditingController _emailSuffixController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailPrefixController.dispose();
+    _emailSuffixController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +33,7 @@ class EmailAdress extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(18.0),
           child: ListView(
-            children: [
+            children: <Widget>[
               SizedBox(height: 16.0),
               Align(
                 alignment: Alignment.bottomLeft,
@@ -32,27 +47,68 @@ class EmailAdress extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 16.0),
-              TextField(
-                style: TextStyle(color: Colors.white),
-                decoration: InputDecoration(
-                  labelText: 'ks8890@naver.com',
-                  hintStyle: TextStyle(
-                    fontSize: 16,
-                    color: Colors.grey,
+              Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      controller: _emailPrefixController,
+                      style: TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                        labelText: 'ks8890',
+                        hintStyle: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey,
+                        ),
+                        labelStyle: TextStyle(color: Colors.white),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          borderSide: BorderSide(width: 1, color: Colors.white),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          borderSide: BorderSide(width: 1, color: Colors.white),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        ),
+                      ),
+                    ),
                   ),
-                  labelStyle: TextStyle(color: Colors.white),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    borderSide: BorderSide(width: 1, color: Colors.white),
+                  SizedBox(width: 8.0),
+                  Text(
+                    '@',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
                   ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    borderSide: BorderSide(width: 1, color: Colors.white),
+                  SizedBox(width: 8.0),
+                  Expanded(
+                    child: TextField(
+                      controller: _emailSuffixController,
+                      style: TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                        labelText: 'naver.com',
+                        hintStyle: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey,
+                        ),
+                        labelStyle: TextStyle(color: Colors.white),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          borderSide: BorderSide(width: 1, color: Colors.white),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          borderSide: BorderSide(width: 1, color: Colors.white),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        ),
+                      ),
+                    ),
                   ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                  ),
-                ),
+                ],
               ),
               SizedBox(height: 16.0),
               Text(

@@ -28,6 +28,8 @@ class _HomePageState extends State<HomePage> {
           title: '홈',
         ),
         body: HomeList(),
-        bottomNavigationBar: BottomNavBar());
+        bottomNavigationBar: BottomNavBar(
+          isHomePage: true,
+        ));
   }
 }

@@ -1,4 +1,3 @@
-import 'package:ent_app/nick_modify.dart';
 import 'package:flutter/material.dart';
 import 'app_bar.dart';
 import 'nick_modify.dart';
@@ -25,6 +24,7 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
       body: Column(
         children: [
+          SizedBox(height: 30.0),
           Expanded(
             flex: 3,
             child: Container(
@@ -210,7 +210,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => EmailAdress()),
+                                  builder: (context) => EmailAddress()),
                             );
                           },
                         ),
